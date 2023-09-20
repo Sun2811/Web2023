@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Dados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jogo de Dados</h1>
+    <button onclick="jogarDados()">Lançar Dados</button>
+    <p id="result"></p>
+
+    <script>
+        function jogarDados() {
+            const dado1 = Math.floor(Math.random() * 6) + 1;
+            const dado2 = Math.floor(Math.random() * 6) + 1;
+            const total = dado1 + dado2;
+
+            if (total === 7 || total === 11) {
+                document.getElementById("result").innerHTML = "Você ganhou!";
+            } else if (total === 2 || total === 3 || total === 12) {
+                document.getElementById("result").innerHTML = "Você perdeu (Craps)!";
+            } else {
+                document.getElementById("result").innerHTML = "Seu ponto é " + total;
+            }
+        }
+    </script>
+</body>
+</html>
+//jogo de dados
